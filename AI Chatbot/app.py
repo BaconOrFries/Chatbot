@@ -3,7 +3,7 @@ from tkinter import *
 from chatbot import response, chatbotName
 
 BG_COLOR = "#358fde"
-BG_MONOTONE = "#4d5054"
+BG_MONOTONE = "#ccdced"
 TEXT_COLOR = "#000000"
 
 FONT_TYPE = "Helvetica 14"
