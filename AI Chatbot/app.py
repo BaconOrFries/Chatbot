@@ -6,8 +6,9 @@ BG_COLOR = "#358fde"
 BG_MONOTONE = "#ccdced"
 TEXT_COLOR = "#000000"
 
-FONT_TYPE = "Helvetica 14"
+FONT_TYPE = "Helvetica 12"
 FONT_BOLD = "Helvetica 12 bold"
+
 
 class ChatApp:
     def __init__(self):
@@ -20,7 +21,7 @@ class ChatApp:
     def _setupWindow(self):
         self.window.title("Chatbot")
         self.window.resizable(width=False, height=False)
-        self.window.configure(width=550, height=450, bg=BG_COLOR)
+        self.window.configure(width=560, height=500, bg=BG_COLOR)
 
         # Head label
         headLabel = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR,text="Mental Health Chatbot", 
@@ -33,13 +34,13 @@ class ChatApp:
 
         # Text bar
         self.textWidget = Text(self.window, width=20, height=2, bg=BG_COLOR, fg=TEXT_COLOR, 
-                                font = FONT_TYPE, padx=5, pady=5)
+                                font = FONT_TYPE, padx=5, pady=5, wrap=WORD)
         self.textWidget.place(relheight=0.745, relwidth=1, rely=0.08)
         self.textWidget.configure(cursor="arrow", state=DISABLED)
 
         # Scrollbar
         scrollbar = Scrollbar(self.textWidget)
-        scrollbar.place(relheight=1, relx=0.975)
+        scrollbar.place(relheight=1, relx=0.99,relwidth=0.01)
         scrollbar.configure(command=self.textWidget.yview)
 
         # Label at the bottom
@@ -48,14 +49,14 @@ class ChatApp:
 
         # Text entry box
         self.textEntry = Entry(bottomLabel, bg="#7bc3ed", fg=TEXT_COLOR, font=FONT_TYPE)
-        self.textEntry.place(relwidth=0.74, relheight=0.06, rely=0.006, relx=0.01)
+        self.textEntry.place(relwidth=0.74, relheight=0.06, relx=0.01, rely=0.005)
         self.textEntry.focus()
         self.textEntry.bind("<Return>", self._onEnter)
 
         # Send button
         sendButton = Button(bottomLabel, text="Send", font=FONT_BOLD, width=20, bg=BG_MONOTONE,
                             command=lambda: self._onEnter(None))
-        sendButton.place(relx=0.77, rely=0.008, relwidth=0.22, relheight=0.06)
+        sendButton.place(relwidth=0.22, relheight=0.06, relx=0.77, rely=0.005)
 
     # Function to enable user to enter their message with the enter key
     def _onEnter(self, event):
