@@ -3,7 +3,7 @@ from tkinter import *
 from chatbot import response, chatbotName
 
 BG_COLOR = "#358fde"
-BG_MONOTONE = "#4444444"
+BG_MONOTONE = "#4d5054"
 TEXT_COLOR = "#000000"
 
 FONT_TYPE = "Helvetica 14"
@@ -13,6 +13,9 @@ class ChatApp:
     def __init__(self):
         self.window = Tk()
         self._setupWindow()
+
+    def run(self):
+        self.window.mainloop()
 
     def _setupWindow(self):
         self.window.title("Chatbot")
@@ -45,7 +48,7 @@ class ChatApp:
 
         # Text entry box
         self.textEntry = Entry(bottomLabel, bg="#7bc3ed", fg=TEXT_COLOR, font=FONT_TYPE)
-        self.textEntry.place(relwidth=0.74, relheight=0.06, rely=0.008, relx=0.01)
+        self.textEntry.place(relwidth=0.74, relheight=0.06, rely=0.006, relx=0.01)
         self.textEntry.focus()
         self.textEntry.bind("<Return>", self._onEnter)
 
@@ -80,5 +83,5 @@ class ChatApp:
         self.textWidget.see(END)
 
 if __name__ == "__main__":
-    app = ChatApp
+    app = ChatApp()
     app.run()

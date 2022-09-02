@@ -94,7 +94,7 @@ training = np.array(training) #Converting training data into numpy array
 train_x = list(training[:,0])
 train_y = list(training[:,1])
 
-tf.reset_default_graph() #Reset Underlying Graph data
+tf.compat.v1.reset_default_graph() #Reset Underlying Graph data
 
 #Building our own Neural Network
 net = tflearn.input_data(shape=[None, len(train_x[0])])
@@ -203,6 +203,6 @@ def response(sentence, userID='123', show_details=False):
                         if show_details: print ('tag:', i['tag'])
                         
                         #A random response from the intent
-                        return print(random.choice(i['responses']))
+                        return random.choice(i['responses'])
 
             results.pop(0)
