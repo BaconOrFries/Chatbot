@@ -12,28 +12,68 @@
         },
         {
             "tag": "loneliness_alone",
-            "patterns": ["lonely", "loneliness", "I've been feeling lonely lately", "I'm feeling lonely"],
-            "responses": ["Oh no :( \n I'm sorry to hear that \n I've also struggled with loneliness, it must feel unpleasant :( \n Did you know that being alone and loneliness aren't the same thing? \n You can achieve contentment and happiness without the presence of others \n I started to enjoy and cherish my time alone by starting to plan my day and participated in various activities. \n The activities weren't all fancy or anything, some were simple, like having lunch outside! \n Why don't you try? List out some activities you're interested in or meant to do but haven't done."]
+            "patterns": ["lonely", "loneliness", "I've been feeling lonely lately", "I'm feeling lonely", "Why am I feeling lonely?"],
+            "responses": ["I'm sorry you're feeling that way :(\nWould you like to learn more about loneliness or find tips on how to feel less lonely?"],
+            "context_set": "loneliness"
+        },
+        {
+            "tag": "lonely_fact",
+            "patterns": ["learn about loneliness", "learn more"],
+            "responses": ["Loneliness isn't about being physically surrounded by people, it's about your mentality.\nWhen you feel lonely, it's usually because you aren't satisfied with what you have, whether it's in that moment or throughout your life."],
+            "context_filter": "loneliness"
+        },
+        {
+            "tag": "lonely_tips",
+            "patterns": ["find tips on feeling less lonely", "find tips", "tips"],
+            "responses": ["The first thing to do is to acknowledge your feelings.\nRefusing to admit to your loneliness means putting of your chance to do something about it.\nNext, you can try learning something new or engage in your hobbies!\nGetting excited about something you're learning or doing, like a new language or skill, may help you feel better.\nIt can also open up doors to meet new people!"],
+            "context_filter": "loneliness"
         },
         {
             "tag": "self_esteem",
             "patterns": ["self esteem", "How do I improve my self esteem?", "How do I raise my low self esteem?"],
-            "responses": ["You can start by identifying negative beliefs and thoughts you have about yourself, such as, \"No one cares about me\" and noting them down. \n Next, write down things that challenges those beliefs, such as, \"My mom calls to chat every week\". \n You can also write down positive things other people say about you! \n Put this list somewhere you can see, like beside your mirror or on your fridge, so you can remind yourself of how cool you are B)", "You can give yourself a mini pep talk to boost your confidence \n Phrases like \"I got this!\" \n \"I can do it!\" \n or \"If I did it once, I can do it again!\""]
+            "responses": ["You can start by identifying negative beliefs and thoughts you have about yourself, such as, \"No one cares about me\" and noting them down.\nNext, write down things that challenges those beliefs, such as, \"My mom calls to chat every week\".\nYou can also write down positive things other people say about you!\nPut this list somewhere you can see, like beside your mirror or on your fridge, so you can remind yourself of how cool you are B)",
+                        "You can give yourself a mini pep talk to boost your confidence.\nYou can say phrases like: \"I got this!\", \"I can do it!\" or \"If I did it once, I can do it again!\""]
         },
         {
             "tag": "feeling_down",
             "patterns": ["depressed", "sad", "anxious", "i'm feeling down", "i'm feeling low"],
-            "responses": ["I'm sorry you're going through this :( \n When someone is feeling down or anxious, they often lose motivation to do activities, even ones they usually enjoy. \n People who are managing low and anxious moods find it hard to feel happiness or pleasure, even while doing things they usually enjoy. \n However, the best thing to do is to start some sort of gratifying activity, even without motivation to begin with. \n It may be hard to start if you don't think you'll enjoy it, but data shows that just by doing the activity can help improve your mood over time and can also keep a good mood going. \n For me, when I listen to music, my mood instantly lifts up and it keeps me going throughout the day! \n Avoiding fun activities when feeling low can actually increase those negative feelings over time, so we want to avoid that. \n Why don't you start listing down some fun activities to try out this week? Here are some examples: \n Reading \n Listening to music \n Singing \n Cleaning \n Walking \n Cooking or Baking"]
+            "responses": ["I'm sorry you're going through this :(\nWhen someone is feeling down or anxious, they often lose motivation to do activities, even ones they usually enjoy.\nWould you like to know how you can lift up your mood?"],
+            "context_set": "anxiety"
+        },
+        {
+            "tag": "anxiety_tips",
+            "patterns": ["yes","learn how to lift up mood"],
+            "responses": ["The best thing to do is to start doing a fun activity.\nIt may be hard to start, but data shows that just by doing the activity can help you improve your mood!\nYou can start out by listing some fun activities to do and then carry them out throughout the week.\nYou can write down activities such as cleaning, cooking or baking. They don't have to be anything fancy :)"],
+            "context_filter": "anxiety"
         },
         {
             "tag": "falling_asleep",
             "patterns": ["i'm having trouble falling asleep", "falling asleep", "can't fall asleep"],
-            "responses": ["It must be frustrating to not be able to fall asleep even if you want to :( \n Many people tend to do a lot of thinking at night, even when they don't want to and would rather get some rest. \n Dr Rachel Manber, an expert in sleep and professir at Stanford recommends a few tips to help you: \n 1. Purposefully set aside around 20-30 minutes of designated 'worry time' ideally at least 2 hours before bed time. During those 20-30 minutes, you can write down whatever's worrying you and then solutions to address those concerns. \n So that at night, whenever you're tempted to let your mind race, simple remind yourself that you've already addressed those concerns and need to let it go, or tell yourself that you'll worry about it during your set time tomorrow instead. \n 2. Make a to-do list for tomorrow \n This way, you wont stay up thinking of everything that needs to be done the following day. \n The to-do list should contain manageable items, like buying groceries, or completing homework. \n 3. Create a buffer zone that takes up about 30 minutes between the hustle and bustle of the day and the tranquility of sleep. \n You can use this time to unwind from the day and prepare your body for sleep. \n You can do anything that brings you calm and peace, such as taking a hot bath or shower, reading a book or listening to calming music. \n If possible, pick an offline, no screens activity as bright devices or lights in your home can keep you alert at bed time. \n Hopefully this helped you fall asleep better! Good night and sweet dreams! :)"]
+            "responses": ["It must be frustrating :(\nMany people tend to do a lot of thinking at night, even when they don't want to and would rather get some rest.\nDr Rachel Manber, an expert in sleep and professor at Stanford recommends a few tips to help you:\n 1. Using the worry time technique\n 2. Creating a to-do list\n 3. Creating a 'buffer zone' between day and night\nWhich would you like to learn about?"],
+            "context_set": "sleep"
+        },
+        {
+            "tag": "worry_time",
+            "patterns": ["1", "worry time technique"],
+            "responses": ["Set aside around 20-30 minutes of designated 'worry time' ideally at least 2 hours before bed time.\nWrite down whatever's worrying you and then solutions to address those concerns.\nWhenever your mind starts to race at night, remind yourself that you've already addressed those concerns and need to let it go."],
+            "context_filter": "sleep"
+        },
+        {
+            "tag": "todo_list",
+            "patterns": ["2", "to-do list", "todo list"],
+            "responses": ["Making a to-do list for the next day lets you prevent thinking of everything that needs to be done the following day.\nThe to-do list should contain manageable items, like buying groceries, or checking your mail."],
+            "context_filter": "sleep"
+        },
+        {
+            "tag": "buffer_zone",
+            "patterns": ["3", "buffer zone"],
+            "responses": ["Set aside about 30 minutes right before bedtime to unwind and prepare your body for sleep.\nYou can do anything that brings you peace, like a hot shower or bath!\nIt should preferably be an offline, no screens activity as bright devices or lights in your home can keep you alert at bedtime."],
+            "context_filter": "sleep"
         },
         {
             "tag": "SOS_hotline",
             "patterns": ["hotlines near me", "hotline"],
-            "responses": ["The following are hotlines you can reach out to if you need immediate help: \n 1. National Care Hotline: \n 1800-202-6868 (8am-12am daily) \n 2. Mental Well-Being: \n - Institute of Mental Health's Mental Health Helpline (6389-2222) \n - Samaritans of Singapore (1800-221-4444) \n - Silver Ribbon Singapore (6385-3714) \n 3. Marital and Parenting Issues: \n - Community Psychology Hub's Online Counselling platform: https://www.cphonlinecounselling.sg/hc/en-us \n 4. Violence or Abuse: \n - Big Love Child Protection Specialist Centre (6445-0400) \n - HEART @ Fei Yue Child Protection Specialist Centre (6819-9170) \n - PAVE Integrated Services for Individual and Family Protection (6555-0390) \n - Project StART (6476-1482) \n - TRANS SAFE Centre (6449-9088) \n For other helplines and mental health related support: \n https://www.msf.gov.sg/Pages/Contact-Us.aspx"]
+            "responses": ["The following are hotlines you can reach out to if you need immediate help:\n1. National Care Hotline:\n1800-202-6868 (8am-12am daily)\n2. Mental Well-Being:\n - Institute of Mental Health's Mental Health Helpline (6389-2222)\n - Samaritans of Singapore (1800-221-4444)\n - Silver Ribbon Singapore (6385-3714)\n3. Marital and Parenting Issues:\n - Community Psychology Hub's Online Counselling platform: https://www.cphonlinecounselling.sg/hc/en-us\n4. Violence or Abuse:\n - Big Love Child Protection Specialist Centre (6445-0400)\n - HEART @ Fei Yue Child Protection Specialist Centre (6819-9170)\n - PAVE Integrated Services for Individual and Family Protection (6555-0390)\n - Project StART (6476-1482)\n - TRANS SAFE Centre (6449-9088)\nFor other helplines and mental health related support:\nhttps://www.msf.gov.sg/Pages/Contact-Us.aspx"]
         }
     ]
 }
