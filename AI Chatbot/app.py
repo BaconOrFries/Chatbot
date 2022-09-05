@@ -43,7 +43,7 @@ class ChatApp(Frame):
         self.textEntryFrame.pack(side=LEFT, fill=BOTH, expand=True)
 
         # Text entry box
-        self.textEntry = Entry(self.textEntryFrame, bg=self.textBoxColour, fg=self.textColour, font="Helvetica 12", bd=1, justify=LEFT)
+        self.textEntry = Entry(self.textEntryFrame, bg=self.textBoxColour, fg=self.textColour, font=self.font, bd=1, justify=LEFT)
         self.textEntry.pack(fill=X, padx=6, pady=6, ipady=8)
         self.textEntry.focus()
         self.textEntry.bind("<Return>", self.onEnter)
