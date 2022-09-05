@@ -32,7 +32,7 @@ class ChatApp(Frame):
 
         # Text bar
         self.textWidget = Text(self.textFrame, yscrollcommand=scrollbar.set, width=20, height=2, bg=self.bgColour, fg=self.textColour, 
-                                font = "Helvetica 12", padx=5, pady=5, wrap=WORD)
+                                font = self.font, padx=5, pady=5, wrap=WORD)
         self.textWidget.pack(expand=True, fill=BOTH)
         self.textWidget.configure(cursor="arrow")
         self.textWidget.configure(state=DISABLED)
